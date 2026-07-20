@@ -265,7 +265,7 @@ class AppDaroo(CTkFrame):
 
     # *************************************************************************************************
     # *********************************************ProductFrame****************************************
-        self.ProductFrame = CTkFrame(self.contentframe, width=850, height=650, fg_color="#006466")
+        self.ProductFrame = CTkFrame(self.contentframe, width=950, height=650, fg_color="#006466")
         self.ProductFrame.place_forget()
 
 
@@ -376,21 +376,21 @@ class AppDaroo(CTkFrame):
         self.tblProduct.heading("#10", text="کد کالا")
         self.tblProduct.column("#10", width=50, anchor=CENTER)
         self.tblProduct.heading("#9", text="نام ژنریک")
-        self.tblProduct.column("#9", width=100, anchor=CENTER)
+        self.tblProduct.column("#9", width=110, anchor=CENTER)
         self.tblProduct.heading("#8", text="نام تجاری")
         self.tblProduct.column("#8", width=100, anchor=CENTER)
         self.tblProduct.heading("#7", text="دوز")
-        self.tblProduct.column("#7", width=60, anchor=CENTER)
+        self.tblProduct.column("#7", width=95, anchor=CENTER)
         self.tblProduct.heading("#6", text="دسته دارویی")
         self.tblProduct.column("#6", width=90, anchor=CENTER)
         self.tblProduct.heading("#5", text="شکل دارویی")
-        self.tblProduct.column("#5", width=90, anchor=CENTER)
+        self.tblProduct.column("#5", width=120, anchor=CENTER)
         self.tblProduct.heading("#4", text="تاریخ انقضا")
         self.tblProduct.column("#4", width=90, anchor=CENTER)
         self.tblProduct.heading("#3", text="قیمت")
-        self.tblProduct.column("#3", width=85, anchor=CENTER)
+        self.tblProduct.column("#3", width=90, anchor=CENTER)
         self.tblProduct.heading("#2", text="سفارش اولیه")
-        self.tblProduct.column("#2", width=75, anchor=CENTER)
+        self.tblProduct.column("#2", width=70, anchor=CENTER)
         self.tblProduct.heading("#1", text="موجودی انبار")
         self.tblProduct.column("#1", width=70, anchor=CENTER)
         self.tblProduct.place(relx=0.02, rely=0.48)
@@ -833,7 +833,7 @@ class AppDaroo(CTkFrame):
     # ////////////////////////////////////توابع فریم داروها////////////////////////////
 
     def ShowProductFrame(self):
-        self.ProductFrame.place(relx=0.18, rely=0.04)
+        self.ProductFrame.place(relx=0.1, rely=0.04)
         self.CustomerFrame.place_forget()
         self.InvoicesFrame.place_forget()
         # self.ReminderFrame.place_forget()
