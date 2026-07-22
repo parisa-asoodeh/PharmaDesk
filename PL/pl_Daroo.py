@@ -516,13 +516,13 @@ class AppDaroo(CTkFrame):
         self.tblInvoice.heading("#8", text="کد دارو")
         self.tblInvoice.column("#8", width=50, anchor=CENTER)
         self.tblInvoice.heading("#7", text="تعداد")
-        self.tblInvoice.column("#7", width=50, anchor=CENTER)
+        self.tblInvoice.column("#7", width=45, anchor=CENTER)
         self.tblInvoice.heading("#6", text="نام مشتری")
         self.tblInvoice.column("#6", width=105, anchor=CENTER)
         self.tblInvoice.heading("#5", text="نام دارو")
         self.tblInvoice.column("#5", width=105, anchor=CENTER)
         self.tblInvoice.heading("#4", text="شکل دارویی")
-        self.tblInvoice.column("#4", width=80, anchor=CENTER)
+        self.tblInvoice.column("#4", width=90, anchor=CENTER)
         self.tblInvoice.heading("#3", text="قیمت واحد")
         self.tblInvoice.column("#3", width=65, anchor=CENTER)
         self.tblInvoice.heading("#2", text="قیمت کل")
@@ -1162,63 +1162,21 @@ class AppDaroo(CTkFrame):
         tree.place(relx=0.01,rely=0.0)
 
 
-        # def load_mojoodi_window(filter_text=""):
-        #     tree.tag_configure("low", background="red")
-        #     tree.tag_configure("half", background="orange")
-        #     tree.tag_configure("normal", background="white")
-        #
-        #     tree.delete(*tree.get_children())
-        #     all_drugs=get_All_Daroo()
-        #
-        #     for item in all_drugs:
-        #         if filter_text.lower() in item.generic.lower():
-        #             if item.mojodi <= 20:
-        #                 tag = "low"
-        #             elif item.mojodi <= 50:  # مثلا بین 21 تا 50
-        #                 tag = "half"
-        #             else:
-        #                 tag = "normal"
-        #             tree.insert("", "end", values=(item.generic,item.tejari,item.dooz,item.shekl, item.mojodi), tags=(tag,))
-
-
-        # def load_mojoodi_window(filter_text=""):
-        #     # تعریف رنگ‌ها و بازه‌ها به صورت لیست از دیکشنری
-        #     ranges = [
-        #         {"max": 20, "tag": "low", "color": "red"},
-        #         {"max": 50, "tag": "half", "color": "orange"},
-        #         {"max": float('inf'), "tag": "normal", "color": "white"}
-        #     ]
-        #
-        #     # پیکربندی تگ‌ها
-        #     for r in ranges:
-        #         tree.tag_configure(r["tag"], background=r["color"])
-        #
-        #     tree.delete(*tree.get_children())
-        #     all_drugs = get_All_Daroo()
-        #
-        #     for item in all_drugs:
-        #         if filter_text.lower() in item.generic.lower():
-        #             # پیدا کردن تگ مناسب بر اساس موجودی
-        #             for r in ranges:
-        #                 if item.mojodi <= r["max"]:
-        #                     tag = r["tag"]
-        #                     break
-        #             tree.insert("", "end", values=(item.generic, item.tejari, item.dooz, item.shekl, item.mojodi),
-        #                         tags=(tag,))
-
-
         def load_mojoodi_window(filter_text=""):
             tree.delete(*tree.get_children())
             all_drugs = get_All_Daroo()
 
-            # پیدا کردن بیشترین موجودی برای نسبت‌دهی رنگ
-            max_mojodi = max(item.mojodi for item in all_drugs) if all_drugs else 1
-
             for item in all_drugs:
                 if filter_text.lower() in item.generic.lower():
-                    percent = (item.mojodi / max_mojodi) * 100  # درصد موجودی نسبت به بیشترین موجودی
 
-                    if percent <= 20:
+                    # محاسبه درصد موجودی نسبت به سفارش اولیه
+                    if item.sefareshAval > 0:
+                        percent = (item.mojodi / item.sefareshAval) * 100
+                    else:
+                        percent = 0
+
+                    # تعیین رنگ بر اساس درصد موجودی باقی‌مانده
+                    if percent <= 30:
                         tag = "low"
                         color = "red"
                     elif percent <= 50:
@@ -1229,30 +1187,19 @@ class AppDaroo(CTkFrame):
                         color = "white"
 
                     tree.tag_configure(tag, background=color)
-                    tree.insert("", "end", values=(item.generic, item.tejari, item.dooz, item.shekl, item.mojodi),
-                                tags=(tag,))
 
-        # def load_mojoodi_window(filter_text=""):
-        #     tree.delete(*tree.get_children())
-        #     all_drugs = get_All_Daroo()
-        #
-        #     # پیدا کردن بیشترین موجودی برای نسبت‌ دهی رنگ
-        #     max_mojodi = max(item.mojodi for item in all_drugs) if all_drugs else 1
-        #
-        #     for item in all_drugs:
-        #         if filter_text.lower() in item.generic.lower():
-        #             percent = item.mojodi / max_mojodi  # درصد بین 0 و 1
-        #
-        #             # تبدیل درصد به رنگ طیفی از قرمز (کم) به سبز (زیاد)
-        #             red = int(255 * (1 - percent))
-        #             green = int(255 * percent)
-        #             color = f'#{red:02x}{green:02x}00'  # رنگ به فرمت HEX
-        #
-        #             tag = f"color_{item.generic}"  # هر دارو یک تگ منحصر بفرد
-        #             tree.tag_configure(tag, background=color)
-        #
-        #             tree.insert("", "end", values=(item.generic, item.tejari, item.dooz, item.shekl, item.mojodi),
-        #                         tags=(tag,))
+                    tree.insert(
+                        "",
+                        "end",
+                        values=(
+                            item.generic,
+                            item.tejari,
+                            item.dooz,
+                            item.shekl,
+                            item.mojodi
+                        ),
+                        tags=(tag,)
+                    )
 
         label_search= CTkLabel(top, text="جستجو",font=("Vazir", 21),text_color="white",width=90)
         label_search.place(relx=0.61,rely=0.94)
