@@ -51,37 +51,41 @@ This project was developed to practice desktop application development using Pyt
 
 ## Screenshots
 
+## 🖼 Screenshots
+
 <p align="center">
-  <img src="docs/screenshots/1-welcome.png" width="350">
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="docs/screenshots/2-login.png" width="350">
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="docs/screenshots/3-dashboard.png" width="350">
+  <img src="docs/screenshots/1-welcome.png" width="380">
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/2-login.png" width="380">
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/4-customers.png" width="350">
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="docs/screenshots/5-products.png" width="350">
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="docs/screenshots/6-invoices.png" width="350">
+  <img src="docs/screenshots/3-dashboard.png" width="380">
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/4-customers.png" width="380">
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/7-inventory.png" width="350">
+  <img src="docs/screenshots/5-products.png" width="380">
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/6-invoices.png" width="380">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/7-inventory.png" width="380">
 </p>
 
 ---
 
-# Features
+## Features
 
-##  Authentication
+###  Authentication
 
 - User login system
 
 ---
 
-##  Product Management
+###  Product Management
 
 - Add new products
 - Edit product information
@@ -90,7 +94,7 @@ This project was developed to practice desktop application development using Pyt
 
 ---
 
-##  Customer Management
+###  Customer Management
 
 - Add new customers
 - Edit customer information
@@ -99,14 +103,14 @@ This project was developed to practice desktop application development using Pyt
 
 ---
 
-##  Inventory Management
+###  Inventory Management
 
 - View current inventory
 - Monitor product stock
 
 ---
 
-##  Invoice Management
+###  Invoice Management
 
 - Create sales invoices
 - Automatic invoice registration
@@ -114,13 +118,13 @@ This project was developed to practice desktop application development using Pyt
 
 ---
 
-##  Persian Calendar Support
+###  Persian Calendar Support
 
 - Jalali (Persian) date support using **jdatetime**
 
 ---
 
-##  User Interface
+###  User Interface
 
 - Modern desktop interface using CustomTkinter
 - Image-based interface
@@ -129,7 +133,7 @@ This project was developed to practice desktop application development using Pyt
 
 ---
 
-# Architecture
+## Architecture
 
 The project is organized using a layered architecture.
 
@@ -152,7 +156,7 @@ SQLite Database
 This architecture separates the user interface, business rules, data access, and entities, making the project easier to maintain and extend.
 
 ---
-# Technologies
+## Technologies
 
 - Python
 - CustomTkinter
@@ -163,7 +167,7 @@ This architecture separates the user interface, business rules, data access, and
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```text
 PharmaDesk/
@@ -190,7 +194,7 @@ PharmaDesk/
 
 ---
 
-# Installation
+## Installation
 
 - Python 3.12+
 - Clone the repository
@@ -239,7 +243,7 @@ python main.py
 
 ---
 
-# Sample Database
+## Sample Database
 
 The repository includes a sample SQLite database (`Darookhaneh.db`) containing demonstration data.
 
@@ -248,7 +252,7 @@ The included database contains only sample data for demonstration purposes. No r
 
 ---
 
-# Design Decisions
+## Design Decisions
 
 ### Layered Architecture
 
@@ -270,7 +274,7 @@ CustomTkinter was chosen to provide a modern desktop user interface while keepin
 
 ---
 
-# Future Improvements
+## Future Improvements
 
 Potential future enhancements include:
 
@@ -285,7 +289,7 @@ Potential future enhancements include:
 
 ---
 
-# Author
+## Author
 
 **Parisa Asoodeh**
 
