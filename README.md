@@ -4,26 +4,84 @@
 ![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?logo=sqlite)
 ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-ORM-red)
 ![CustomTkinter](https://img.shields.io/badge/CustomTkinter-GUI-green)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 A desktop pharmacy management system developed with Python for managing pharmacy products, customers, inventory, and sales invoices.
 
 This project was developed to practice desktop application development using Python, layered software architecture, SQLAlchemy for database management, and modern graphical user interface design with CustomTkinter.
 
-## 📸 Demo & Screenshots
+---
 
-Demo GIF and screenshots will be added in a future update.
+##  Highlights
+
+- Desktop Pharmacy Management System
+- Modern GUI with CustomTkinter
+- Layered Architecture (PL / BLL / DAL / BE)
+- SQLAlchemy ORM
+- SQLite Database
+- Persian (Jalali) Calendar Support
 
 ---
 
-# ✨ Features
+## Table of Contents
 
-## 🔐 Authentication
+- [Demo](#demo)
+- [Screenshots](#screenshots)
+- [Features](#features)
+- [Architecture](#architecture)
+- [Technologies](#technologies)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Sample Database](#sample-database)
+- [Design Decisions](#design-decisions)
+- [Future Improvements](#future-improvements)
+- [Author](#author)
+
+---
+
+
+
+## Demo
+
+<p align="center">
+  <img src="docs/demo.gif" alt="PharmaDesk Demo" width="750">
+</p>
+
+---
+
+## Screenshots
+
+<p align="center">
+  <img src="docs/screenshots/1-welcome.png" width="350">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="docs/screenshots/2-login.png" width="350">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="docs/screenshots/3-dashboard.png" width="350">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/4-customers.png" width="350">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="docs/screenshots/5-products.png" width="350">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="docs/screenshots/6-invoices.png" width="350">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/7-inventory.png" width="350">
+</p>
+
+---
+
+# Features
+
+##  Authentication
 
 - User login system
 
 ---
 
-## 💊 Product Management
+##  Product Management
 
 - Add new products
 - Edit product information
@@ -32,7 +90,7 @@ Demo GIF and screenshots will be added in a future update.
 
 ---
 
-## 👥 Customer Management
+##  Customer Management
 
 - Add new customers
 - Edit customer information
@@ -41,14 +99,14 @@ Demo GIF and screenshots will be added in a future update.
 
 ---
 
-## 📦 Inventory Management
+##  Inventory Management
 
 - View current inventory
 - Monitor product stock
 
 ---
 
-## 🧾 Invoice Management
+##  Invoice Management
 
 - Create sales invoices
 - Automatic invoice registration
@@ -56,13 +114,13 @@ Demo GIF and screenshots will be added in a future update.
 
 ---
 
-## 📅 Persian Calendar Support
+##  Persian Calendar Support
 
 - Jalali (Persian) date support using **jdatetime**
 
 ---
 
-## 🎨 User Interface
+##  User Interface
 
 - Modern desktop interface using CustomTkinter
 - Image-based interface
@@ -71,7 +129,7 @@ Demo GIF and screenshots will be added in a future update.
 
 ---
 
-# 🏗 Architecture
+# Architecture
 
 The project is organized using a layered architecture.
 
@@ -94,19 +152,18 @@ SQLite Database
 This architecture separates the user interface, business rules, data access, and entities, making the project easier to maintain and extend.
 
 ---
-
-# 🛠 Technologies
+# Technologies
 
 - Python
 - CustomTkinter
 - SQLAlchemy
 - SQLite
-- Pillow
-- jdatetime
+- Pillow (Image Processing)
+- jdatetime (Jalali Calendar)
 
 ---
 
-# 📂 Project Structure
+# Project Structure
 
 ```text
 PharmaDesk/
@@ -133,12 +190,13 @@ PharmaDesk/
 
 ---
 
-# 🚀 Installation
+# Installation
 
-Clone the repository
+- Python 3.12+
+- Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/parisa-asoodeh/PharmaDesk.git
 ```
 
 Move into the project directory
@@ -181,16 +239,16 @@ python main.py
 
 ---
 
-# 🧪 Sample Database
+# Sample Database
 
 The repository includes a sample SQLite database (`Darookhaneh.db`) containing demonstration data.
 
-No real or sensitive information is included.
+The included database contains only sample data for demonstration purposes. No real or sensitive information is included.
 
 
 ---
 
-# 💡 Design Decisions
+# Design Decisions
 
 ### Layered Architecture
 
@@ -212,7 +270,7 @@ CustomTkinter was chosen to provide a modern desktop user interface while keepin
 
 ---
 
-# 🔮 Future Improvements
+# Future Improvements
 
 Potential future enhancements include:
 
@@ -223,14 +281,17 @@ Potential future enhancements include:
 - Role-based user permissions
 - Password hashing
 - Database migration to PostgreSQL or SQL Server
+- Unit tests
 
 ---
 
-# 👩‍💻 Author
+# Author
 
 **Parisa Asoodeh**
 
 Python Developer
+
+GitHub: <https://github.com/parisa-asoodeh>
 
 ---
 

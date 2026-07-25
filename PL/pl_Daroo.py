@@ -105,9 +105,9 @@ class AppDaroo(CTkFrame):
                                  ,fg_color="#dff5f2",command=self.open_menu)
         self.btnMenu.place(relx=0.93, rely=0.01)
 
-        self.label_Welcom=Label(self.contentframe,text="داروخانه دکتر فریدونی",fg="#2EC4B6",bg="#dff5f2",
+        self.label_Welcom=Label(self.contentframe,text="داروخانه دکتر فریدونی",fg="#67c6ba",bg="#def4f1",
                                    width=14,height=2,font="BNazanin 55")
-        self.label_Welcom.place(relx=0.26, rely=0.29)
+        self.label_Welcom.place(relx=0.26, rely=0.23)
 
 
 
